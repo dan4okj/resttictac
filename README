@@ -1,0 +1,21 @@
+Restful Tic Tac Toe Game
+
+To run
+	1. Add the directory to your GOPPATH
+	2. make deps - install dependencies
+	3. make run - Runs the API Service on port 5000
+	4. (optional) make test - run tests
+
+Todos:
+	- Handle 500s and 400s status codes seperately. Currently the 500 in the play endpoint is not good
+	- figure a smarter way to check the board (maybe a bit nitpicky)
+	- Add more tests. Coverage is ~55%
+	- Parse requests more comprehensively. Check content type, so on
+
+Endpoints:
+/game  GET - gives JSON representation of the current state of the game
+/game  PUT - Player Makes a move
+				{"col": <col_no>, "row": <row_no>, "move": <move>}
+					col_no/row_no - 0-2 int
+					move - X/O str
+/game POST - starts a new game only if the current one is completed
